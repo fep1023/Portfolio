@@ -1,0 +1,41 @@
+<!doctype html>
+<!--
+     This page is shown when the extension button is clicked, because the "browser_action" field in manifest.json contains the "default_popup" key with value "popup.html".
+ -->
+<html>
+    <head>
+        <title>Password Generator</title>
+        <style>
+            body {
+                font-family: "Segoe UI", "Lucinda Grande", Tahoma, Sans-Serif;
+                font-size: 100%;
+            }
+            #status {
+                /* avoid excessively wide status text. */
+                white-space: pre;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                max-width: 400px;
+            }
+        </style>
+        <!--
+            Javasript and HTML must be in separate files:
+        -->
+    </head>
+    <body>
+        <h2>Create your password:</h2>
+        <div id="status"></div>
+        <img id="image-result" hidden>
+        <form>
+            Password seed:<br>
+            <input type="text" id="seed" autocomplete="off"><br>
+            <button type="button" id="function">Generate</button>
+            <!-- key code for enter: 13 -->
+        </form>
+        <h3>Password:</h3>
+        <div id="demo">
+            <p id="p"></p>
+        </div>
+        <script src="Script/PasswordGen.js"></script>
+    </body>
+</html>
